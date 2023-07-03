@@ -1,12 +1,12 @@
 #FastAPI Imports
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 #Local Imports
 from src.config.config import Config
 
 Base = declarative_base()
-load_dotenv()
+# load_dotenv()
 
 class AsyncDatabaseSession:
     def __init__(self):

@@ -1,15 +1,10 @@
-from pydantic import BaseModel, constr,EmailStr
-from pydantic.types import constr, conint
-from typing import Optional, List
+from pydantic import BaseModel,constr
+from typing import List,Optional
 
 
-class Pan_cardSerializer(BaseModel):
-    name:Optional[str]
-    pan_number:Optional[int]
-    BOD:Optional[int]
-    pan_proof:Optional[int]
-
-
-
-
-
+class PancardSerializer(BaseModel):
+    id : Optional[constr]
+    name :Optional[constr]
+    pan_number:Optional[constr]
+    BOD:Optional[constr]
+    pan_proof=Optional[constr]

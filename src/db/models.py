@@ -1,21 +1,15 @@
-from sqlalchemy import Column, Integer, String
-from src.config.config import Base
+import sqlalchemy as db
+from datetime import datetime
+from src.db.db import Base
 
-
-
-class Pan_card(Base):
+class pancard(Base):
     __tablename__="pancard"
+    id=db.Column(db.Integer,Primary_key=True,Index=True)
+    name=db.Column(db.String)
+    pan_number=db.Column(db.Integer)
+    BOD=db.Column(db.Integer,Primary_key=True,Index=True)
+    Pan_proof=db.Column(db.String)
 
-    id = Column(Integer, primary_key=True)
-    name =Column(String,nullable=True,unique=True)
-    pan_number=Column(Integer,nullable=True,unique=True)
-    BOD=Column(Integer,nullable=True,unique=True)
-    pan_proof=Column(String,nullable=True,unique=True)    
 
-
-    def __init__(self,id,name,pan_number,BOD,pan_proof):
-        self.id = id
-        self.name = name
-        self.pan_proof = pan_number
-        self.BOD = BOD
-        self.pan_proof = pan_proof
+    
+      
